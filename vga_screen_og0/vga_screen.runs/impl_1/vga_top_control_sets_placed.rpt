@@ -1,0 +1,90 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Tue Dec 13 17:04:05 2022
+| Host         : HU-DOPX-DIL10 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file vga_top_control_sets_placed.rpt
+| Design       : vga_top
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    12 |
+|    Minimum number of control sets                        |    12 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    60 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    12 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     5 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              45 |           22 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              29 |           19 |
+| Yes          | No                    | No                     |              28 |           13 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              14 |            9 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-----------------------+-----------------------+------------------+----------------+--------------+
+|  Clock Signal  |     Enable Signal     |    Set/Reset Signal   | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-----------------------+-----------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                       |                       |                1 |              2 |         2.00 |
+|  vc/animate    |                       |                       |                1 |              2 |         2.00 |
+|  cd/CLK_BUFG   |                       |                       |                2 |              3 |         1.50 |
+|  cd/CLK_BUFG   | pg/red[3]_i_1_n_0     | pg/green[3]_i_1_n_0   |                2 |              4 |         2.00 |
+|  cd/CLK_BUFG   | pg/red[3]_i_1_n_0     |                       |                5 |              8 |         1.60 |
+|  clk_0         |                       | pg/y_loc10            |                5 |              9 |         1.80 |
+|  clk_0         |                       | pg/x_loc10            |                7 |             10 |         1.43 |
+|  clk_0         | pg/cy[9]_i_1_n_0      |                       |                4 |             10 |         2.50 |
+|  clk_0         | pg/cx[9]_i_1_n_0      |                       |                4 |             10 |         2.50 |
+|  cd/CLK_BUFG   |                       | hc/h_count[9]_i_1_n_0 |                7 |             10 |         1.43 |
+|  cd/CLK_BUFG   | vc/v_count[9]_i_2_n_0 | vc/v_count[9]_i_1_n_0 |                7 |             10 |         1.43 |
+|  clk_0         |                       |                       |               18 |             38 |         2.11 |
++----------------+-----------------------+-----------------------+------------------+----------------+--------------+
+
+
